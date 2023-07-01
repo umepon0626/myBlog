@@ -145,17 +145,25 @@
   <hr aria-hidden="true" class="border-skin-line">
 </div>
 
-    
-          <section class="astro-J7PV25F6" id="featured">
-            <h2 class="astro-J7PV25F6">Featured</h2>
-            <ul class="astro-J7PV25F6">
-              <li class="my-6"><a class="inline-block decoration-dashed focus-visible:no-underline focus-visible:underline-offset-0 font-medium text-lg text-skin-accent underline-offset-4" href="/posts/astro-paper-2"><h3 class="decoration-dashed font-medium text-lg hover:underline">AstroPaper 2.0</h3></a><div class="flex items-center opacity-80 space-x-2 undefined"><svg class="inline-block fill-skin-base h-6 scale-90 w-6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-sm">January 30, 2023<span aria-hidden="true"> | </span><span class="sr-only">&nbsp;at&nbsp;</span>03:57 PM</span></div><p>AstroPaper with the enhancements of Astro v2. Type-safe markdown contents, bug fixes and better dev experience etc.</p></li><li class="my-6"><a class="inline-block decoration-dashed focus-visible:no-underline focus-visible:underline-offset-0 font-medium text-lg text-skin-accent underline-offset-4" href="/posts/adding-new-posts-in-astropaper-theme"><h3 class="decoration-dashed font-medium text-lg hover:underline">Adding new posts in AstroPaper theme</h3></a><div class="flex items-center opacity-80 space-x-2 undefined"><svg class="inline-block fill-skin-base h-6 scale-90 w-6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-sm">September 23, 2022<span aria-hidden="true"> | </span><span class="sr-only">&nbsp;at&nbsp;</span>03:22 PM</span></div><p>Some rules &amp; recommendations for creating or adding new posts using AstroPaper theme.</p></li><li class="my-6"><a class="inline-block decoration-dashed focus-visible:no-underline focus-visible:underline-offset-0 font-medium text-lg text-skin-accent underline-offset-4" href="/posts/how-to-configure-astropaper-theme"><h3 class="decoration-dashed font-medium text-lg hover:underline">How to configure AstroPaper theme</h3></a><div class="flex items-center opacity-80 space-x-2 undefined"><svg class="inline-block fill-skin-base h-6 scale-90 w-6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-sm">September 23, 2022<span aria-hidden="true"> | </span><span class="sr-only">&nbsp;at&nbsp;</span>04:58 AM</span></div><p>How you can make AstroPaper theme absolutely yours.</p></li>
+    <!-- {
+      featuredPosts.length > 0 && (
+        <>
+          <section id="featured">
+            <h2>Featured</h2>
+            <ul>
+              {featuredPosts.map(({ data }) => (
+                <Card
+                  href={`/posts/${slugify(data)}`}
+                  frontmatter={data}
+                  secHeading={false}
+                />
+              ))}
             </ul>
           </section>
-          <div class="max-w-3xl mx-auto px-4">
-  <hr aria-hidden="true" class="border-skin-line">
-</div>
-        
+          <Hr />
+        </>
+      )
+    } -->
 
     <section class="astro-J7PV25F6" id="recent-posts">
       <h2 class="astro-J7PV25F6">Recent Posts</h2>
