@@ -4,36 +4,11 @@ description: Install pnpm, Node.js specified by .tool-versions
 runs:
   using: composite
   steps:
-    - name: Get node version
-      id: node-version
-      run: |
-        version=$(grep "^nodejs " ".tool-versions" | sed -e "s/^nodejs //")
-        echo "NODE_VERSION=$version" >> $GITHUB_OUTPUT
-      shell: bash
-
-    - name: Setup node
-      uses: actions/setup-node@v3
+    - uses: actions/checkout@v3
+    - name: Get node version from volta
+      id: get-node-version
+      uses: keita-hino/get-node-version-from-volta@main
+    - uses: actions/setup-node@v2
       with:
-        node-version: ${{ steps.node-version.outputs.NODE_VERSION }}
-
-    - name: Enable corepack
-      run: corepack enable
-      shell: bash
-
-    - name: Get pnpm store directory
-      id: pnpm-cache
-      run: |
-        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-      shell: bash
-
-    - name: Setup pnpm cache
-      uses: actions/cache@v3
-      with:
-        path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-        key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-        restore-keys: |
-          ${{ runner.os }}-pnpm-
-
-    - name: pnpm version
-      run: pnpm -v
-      shell: bash
+        node-version: ${{ steps.get-node-version.outputs.nodeVersion }}
+    

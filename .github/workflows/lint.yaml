@@ -18,7 +18,7 @@ jobs:
         uses: ./.github/actions/install-tools
 
       - name: Install Dependencies
-        run: pnpm install --dev
+        run: yarn install --dev
 
       - name: Lint with Prettier
-        run: pnpm lint
+        run: yarn lint

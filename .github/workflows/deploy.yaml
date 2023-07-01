@@ -18,11 +18,14 @@ jobs:
       - name: Install tools
         uses: ./.github/actions/install-tools
 
-      - name: Install Dependencies
-        run: rm -fr $(pnpm store path) && pnpm install
-
-      - name: Build
-        run: pnpm build
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install 
+      - name: Build production bundle
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
 
       - name: Set CNAME
         run: echo "rumehara.com" > ./dist/CNAME
