@@ -1,0 +1,34 @@
+name: Build And Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install tools
+        uses: ./.github/actions/install-tools
+
+      - name: Install Dependencies
+        run: rm -fr $(pnpm store path) && pnpm install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Set CNAME
+        run: echo "rumehara.com" > ./dist/CNAME
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
