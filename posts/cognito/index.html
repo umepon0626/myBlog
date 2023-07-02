@@ -2,28 +2,28 @@
     <meta charset="UTF-8">
     <meta content="width=device-width" name="viewport">
     <link href="/favicon.svg" rel="icon" type="image/svg+xml">
-    <link href="https://rumehara.com/posts/how-do-i-develop-my-terminal-portfolio-website-with-react/" rel="canonical">
+    <link href="https://rumehara.com/posts/cognito/" rel="canonical">
     <meta content="Astro v2.7.2" name="generator">
 
     <!-- General Meta Tags -->
-    <title>How Do I Develop My Terminal Portfolio Website with React</title>
-    <meta content="How Do I Develop My Terminal Portfolio Website with React" name="title">
-    <meta content="EXAMPLE POST: Developing a terminal-like website using ReactJS, TypeScript and Styled-Components. Includes features like autocomplete, multiple themes, command hints etc." name="description">
-    <meta content="Sat Naing" name="author">
+    <title>Cognitoを用いたSPA x backend API の認証&amp;認可 設計</title>
+    <meta content="Cognitoを用いたSPA x backend API の認証&amp;認可 設計" name="title">
+    <meta content="Cognitoを用いたSPAの認証&amp;認可の設計方法について説明します．" name="description">
+    <meta content="Ryuichi Umehara" name="author">
     <link href="/sitemap-index.xml" rel="sitemap">
 
     <!-- Open Graph / Facebook -->
-    <meta content="How Do I Develop My Terminal Portfolio Website with React" property="og:title">
-    <meta content="EXAMPLE POST: Developing a terminal-like website using ReactJS, TypeScript and Styled-Components. Includes features like autocomplete, multiple themes, command hints etc." property="og:description">
-    <meta content="https://rumehara.com/posts/how-do-i-develop-my-terminal-portfolio-website-with-react/" property="og:url">
-    <meta content="https://rumehara.com/How%20Do%20I%20Develop%20My%20Terminal%20Portfolio%20Website%20with%20React.png" property="og:image">
+    <meta content="Cognitoを用いたSPA x backend API の認証&amp;認可 設計" property="og:title">
+    <meta content="Cognitoを用いたSPAの認証&amp;認可の設計方法について説明します．" property="og:description">
+    <meta content="https://rumehara.com/posts/cognito/" property="og:url">
+    <meta content="https://user-images.githubusercontent.com/53733092/215771435-25408246-2309-4f8b-a781-1f3d93bdf0ec.png" property="og:image">
 
     <!-- Twitter -->
     <meta content="summary_large_image" property="twitter:card">
-    <meta content="https://rumehara.com/posts/how-do-i-develop-my-terminal-portfolio-website-with-react/" property="twitter:url">
-    <meta content="How Do I Develop My Terminal Portfolio Website with React" property="twitter:title">
-    <meta content="EXAMPLE POST: Developing a terminal-like website using ReactJS, TypeScript and Styled-Components. Includes features like autocomplete, multiple themes, command hints etc." property="twitter:description">
-    <meta content="https://rumehara.com/How%20Do%20I%20Develop%20My%20Terminal%20Portfolio%20Website%20with%20React.png" property="twitter:image">
+    <meta content="https://rumehara.com/posts/cognito/" property="twitter:url">
+    <meta content="Cognitoを用いたSPA x backend API の認証&amp;認可 設計" property="twitter:title">
+    <meta content="Cognitoを用いたSPAの認証&amp;認可の設計方法について説明します．" property="twitter:description">
+    <meta content="https://user-images.githubusercontent.com/53733092/215771435-25408246-2309-4f8b-a781-1f3d93bdf0ec.png" property="twitter:image">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -43,7 +43,7 @@
     </script>
 
     <script src="/toggle-theme.js"></script>
-  <link href="/_astro/about.389b79ce.css" rel="stylesheet">
+  <link href="/_astro/about.2c4e95d7.css" rel="stylesheet">
 <link href="/_astro/about.6e6daff0.css" rel="stylesheet">
 <link href="/_astro/_slug_.40cf44c5.css" rel="stylesheet">
 <link href="/_astro/_slug_.41a32359.css" rel="stylesheet">
@@ -118,113 +118,84 @@
     </button>
   </div>
   <main class="astro-VJ4TPSPI" id="main-content">
-    <h1 class="astro-VJ4TPSPI post-title">How Do I Develop My Terminal Portfolio Website with React</h1>
-    <div class="astro-VJ4TPSPI flex items-center my-2 opacity-80 space-x-2"><svg class="inline-block fill-skin-base h-6 scale-100 w-6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-base">June 9, 2022<span aria-hidden="true"> | </span><span class="sr-only">&nbsp;at&nbsp;</span>03:42 AM</span></div>
+    <h1 class="astro-VJ4TPSPI post-title">Cognitoを用いたSPA x backend API の認証&amp;認可 設計</h1>
+    <div class="astro-VJ4TPSPI flex items-center my-2 opacity-80 space-x-2"><svg class="inline-block fill-skin-base h-6 scale-100 w-6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-base">January 30, 2023<span aria-hidden="true"> | </span><span class="sr-only">&nbsp;at&nbsp;</span>03:57 PM</span></div>
     <article class="astro-VJ4TPSPI max-w-3xl mx-auto mt-8 prose" id="article" role="article">
-      <blockquote>
-<p>This article is originally from my <a href="https://satnaing.dev/blog/posts/how-do-i-develop-my-terminal-portfolio-website-with-react">blog post</a>. I put this article to demonstrate how you can write blog posts/articles using AstroPaper theme.</p>
-</blockquote>
-<p>Developing a terminal-like website using ReactJS, TypeScript and Styled-Components. Includes features like autocomplete, multiple themes, command hints etc.</p>
-<p><img alt="Sat Naing's Terminal Portfolio" decoding="async" src="https://satnaing.dev/_ipx/w_2048,q_75/https%3A%2F%2Fres.cloudinary.com%2Fnoezectz%2Fimage%2Fupload%2Fv1654754125%2FSatNaing%2Fterminal-screenshot_gu3kkc.png?url=https%3A%2F%2Fres.cloudinary.com%2Fnoezectz%2Fimage%2Fupload%2Fv1654754125%2FSatNaing%2Fterminal-screenshot_gu3kkc.png&amp;w=2048&amp;q=75" fetchpriority="high"></p>
+      <p>こんにちは．
+今日はAmazon Cognitoを用いたSingle Page Application (SPA) の認証 and 認可の設計方法についてご説明します．</p>
 <h2 id="table-of-contents">Table of contents</h2>
 <p></p><details><summary>Open Table of contents</summary><p></p>
 <ul>
 <li>
-<p><a href="#intro">Intro</a></p>
+<p><a href="#%E8%AA%8D%E8%A8%BC%E3%81%A8%E8%AA%8D%E5%8F%AF%E3%81%AE%E9%81%95%E3%81%84">認証と認可の違い</a></p>
 </li>
 <li>
-<p><a href="#tech-stack">Tech Stack</a></p>
-</li>
-<li>
-<p><a href="#features">Features</a></p>
+<p><a href="#cognito%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E8%AA%8D%E8%A8%BC-and-%E8%AA%8D%E5%8F%AF%E3%81%AE%E8%A8%AD%E8%A8%88%E6%96%B9%E6%B3%95%E3%81%AE%E5%8B%98%E6%89%80">Cognitoにおける認証 and 認可の設計方法の勘所</a></p>
 <ul>
-<li><a href="#multiple-themes">Multiple Themes</a></li>
-<li><a href="#command-line-completion">Command-line Completion</a></li>
-<li><a href="#previous-commands">Previous Commands</a></li>
-<li><a href="#viewclear-command-history">View/Clear Command History</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%ABcognito%E3%81%AB%E3%81%AF%E8%AA%8D%E8%A8%BC%E3%81%AE%E3%81%BF%E3%82%92%E6%8C%81%E3%81%9F%E3%81%9B%E3%82%8B%E3%81%B9%E3%81%8D">基本的にCognitoには認証のみを持たせるべき</a></li>
+<li><a href="#%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%A7%E3%81%AF%E8%AA%8D%E5%8F%AF%E6%A9%9F%E8%83%BD%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%A7%E3%81%8D%E3%82%8B%E3%81%AE%E3%81%8B">カスタムプロパティでは認可機能を実装できるのか</a></li>
+<li><a href="#%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E6%83%85%E5%A0%B1%E3%81%AE%E4%BA%8C%E9%87%8D%E7%AE%A1%E7%90%86%E3%81%AE%E5%BD%B1%E9%9F%BF%E3%82%92%E6%A5%B5%E5%8A%9B%E7%84%A1%E3%81%8F%E3%81%99">ユーザー情報の二重管理の影響を極力無くす</a></li>
+<li><a href="#%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E4%BD%9C%E6%88%90%E3%82%92%E3%81%A9%E3%81%93%E3%81%A7%E8%A1%8C%E3%81%86%E3%81%B9%E3%81%8D%E3%81%8B">ユーザー作成をどこで行うべきか</a></li>
 </ul>
-</li>
-<li>
-<p><a href="#outro">Outro</a></p>
-</li>
-<li>
-<p><a href="#project-links">Project Links</a></p>
 </li>
 </ul>
 <p></p></details><p></p>
-<h2 id="intro">Intro</h2>
-<p>Recently, I’ve developed and published my portfolio + a blog. I’m glad I got some good feedback for it. Today, I want to introduce my new terminal-like portfolio website. It is developed using ReactJS, TypeScript. I got this idea from CodePen and YouTube.</p>
-<h2 id="tech-stack">Tech Stack</h2>
-<p>This project is a frontend project without any backend codes. The UI/UX part is designed in Figma. For the frontend user-interface, I chose React over pain JavaScript and NextJS. Why?</p>
-<ul>
-<li>Firstly, I want to write declarative code. Managing HTML DOM using JavaScript imperatively is really tedious.</li>
-<li>Secondly, because it is React!!! It is fast, and reliable.</li>
-<li>Lastly, I don’t need much of the SEO features, routing and image optimization provided by NextJS.</li>
-</ul>
-<p>And of course there’s TypeScript for type checking.</p>
-<p>For styling, I took a different approach than what I usually do. Instead of choosing Pure CSS, Sass, or Utility CSS Framework like TailwindCSS, I chose the CSS-in-JS way (Styled-Components). Although I’ve known about Styled-Components for some time, I’ve never tried it out. So, the writing style and structures of Styled-Components in this project may not be very organized or very good.</p>
-<p>This project doesn’t need very complex state management. I just use ContextAPI in this project for multiple theming and to avoid prop drilling.</p>
-<p>Here’s a quick recap for the tech stack.</p>
-<ul>
-<li>Frontend: <a href="https://reactjs.org/" title="React Website">ReactJS</a>, <a href="https://www.typescriptlang.org/" title="TypeScript Website">TypeScript</a></li>
-<li>Styling: <a href="https://styled-components.com/" title="Styled-Components Website">Styled-Components</a></li>
-<li>UI/UX: <a href="https://figma.com/" title="Figma Website">Figma</a></li>
-<li>State Management: <a href="https://reactjs.org/docs/context.html" title="React ContextAPI">ContextAPI</a></li>
-<li>Deployment: <a href="https://www.netlify.com/" title="Netlify Website">Netlify</a></li>
-</ul>
-<h2 id="features">Features</h2>
-<p>Here are some features of the project.</p>
-<h3 id="multiple-themes">Multiple Themes</h3>
-<p>Users can change multiple themes. At the time of writing this post, there are 5 themes; and more themes will probably be added in the future. The selected theme is saved in local storage so that the theme won’t change on page refresh.</p>
-<p><img alt="Setting different theme" decoding="async" src="https://i.ibb.co/fSTCnWB/terminal-portfolio-multiple-themes.gif" fetchpriority="high"></p>
-<h3 id="command-line-completion">Command-line Completion</h3>
-<p>To look and feel as close to the actual terminal as possible, I put a command-line completion feature which auto fills in partially typed commands by simply pressing ‘Tab’ or ‘Ctrl + i’.</p>
-<p><img alt="Demonstrating command-line completion" decoding="async" src="https://i.ibb.co/CQTGGLF/terminal-autocomplete.gif" loading="lazy"></p>
-<h3 id="previous-commands">Previous Commands</h3>
-<p>Users can go back to the previous commands or navigate the previously typed commands by pressing Up &amp; Down Arrows.</p>
-<p><img alt="Going back to previous commands with UP Arrow" decoding="async" src="https://i.ibb.co/vD1pSRv/terminal-up-down.gif" loading="lazy"></p>
-<h3 id="viewclear-command-history">View/Clear Command History</h3>
-<p>previously typed commands can be viewed by typing ‘history’ in the command line. All the command history and terminal screen can be wiped out by typing ‘clear’ or pressing ‘Ctrl + l’.</p>
-<p><img alt="Clearing the terminal with 'clear' or 'Ctrl + L' command" decoding="async" src="https://i.ibb.co/SJBy8Rr/terminal-clear.gif" loading="lazy"></p>
-<h2 id="outro">Outro</h2>
-<p>This is a really fun project, and one special part of this project is I had to focus on logic rather than user-interface (even though this is kind of a frontend project).</p>
-<h2 id="project-links">Project Links</h2>
-<ul>
-<li>Website: <a href="https://terminal.satnaing.dev/" title="https://terminal.satnaing.dev/">https://terminal.satnaing.dev/</a></li>
-<li>Repo: <a href="https://github.com/satnaing/terminal-portfolio" title="https://github.com/satnaing/terminal-portfolio">https://github.com/satnaing/terminal-portfolio</a></li>
-</ul>
+<h2 id="認証と認可の違い">認証と認可の違い</h2>
+<p>似た漢字なので両者を混同して使っている人も多いかもしれませんが，両者の意味は全く異なります．</p>
+<p>認証は，そのユーザーが誰なのかを保証することを言います．</p>
+<p>一方で認可はユーザーにどの権限を付与するかを判定することを言います．</p>
+<h2 id="cognitoにおける認証-and-認可の設計方法の勘所">Cognitoにおける認証 and 認可の設計方法の勘所</h2>
+<p>Cognitoでは認証と認可を実装することができます．</p>
+<p>AWSリソースを操作するような権限を付与するために，ユーザーのグループを分けることで認可機能を実装することができます．</p>
+<p>しかし，今回はSPAとBackEndのAPIにおいて，認証と認可をどのように設計していくべきかをご説明します．</p>
+<h3 id="基本的にcognitoには認証のみを持たせるべき">基本的にCognitoには認証のみを持たせるべき</h3>
+<p>基本的にCognitoには認証機能のみを持たせるべきです．</p>
+<p>以下その理由を説明していきます．</p>
+<p>Cognitoの初期設定時にはユーザーにどのようなプロパティを持たせるかを指定することができます．</p>
+<p>たとえば，ユーザーにはユーザー登録の際に，ユーザー名やニックネーム，電話番号などの情報を入力してもらい，Cognito上でそれらの情報を保存することができます．</p>
+<p>よって，たとえば，電話番号とPasswordで認証を行うといったことが実現できます．</p>
+<p>このプロパティはCognitoによってデフォルトで準備されているものから，実際に使用する項目を選ぶこともできますし，開発者自身がカスタムプロパティを設定することができます．</p>
+<h3 id="カスタムプロパティでは認可機能を実装できるのか">カスタムプロパティでは認可機能を実装できるのか</h3>
+<p>このカスタムプロパティを使用すると権限を管理することもできそうですが，1つ大きな落とし穴があります．</p>
+<p>それは，このプロパティというのは後から追加したり変更することができないということです．</p>
+<p>例えば，あるアプリケーションを保守運用する場合を考えます．</p>
+<p>権限管理として，今まではCognito上で設定していた<code>role</code>プロパティを使って，<code>role</code>が<code>admin</code>の人には管理者権限が与えられていたとします．</p>
+<p>しかし，次により複雑な条件で認可を実装しようとした時に，cognitoには新たにプロパティを設定することができないので，新たに認証プロバイダーを作成し移行したり，DBにユーザーテーブルを作成して，新たなプロパティを追加することで対処する必要があります．</p>
+<p>こうなってしまうと，cognitoとDBでユーザー情報を二重に管理する必要が出てきます．</p>
+<p>よって，Cognitoを使用する際には，Cognitoに保存する情報は認証で使用するメールアドレスや電話番号のみにしておき，権限などを含んだユーザーの大抵の情報はもとからDBに保存しておき，後からマイグレーションなどの方法で変更ができる状態にしておくことが望ましいです．</p>
+<h3 id="ユーザー情報の二重管理の影響を極力無くす">ユーザー情報の二重管理の影響を極力無くす</h3>
+<p>Cognitoに必要最小限の情報だけを持たせるメリットは，権限管理の実装を柔軟にする以外にもあります．</p>
+<p>それは，ユーザー情報の二重管理の影響を極力減らせることです．</p>
+<p>ユーザーに関する情報はCognitoとDBの二箇所に存在しています．</p>
+<p>もしも，重複した情報が存在する場合は，両者で同期を行う必要があります．またCognitoが持つ情報が多い場合は，どのプロパティがCognitoで管理されており，どのプロパティがDBで管理されているのかを把握することが，開発を進めていくと困難になっていきます．</p>
+<p>しかし，Cognitoに持たせる情報を必要最低限にすることで，開発者はCognito ⇄ DB間の情報の同期を最低限に保つことができますし，ユーザーのプロパティはDBだけ見れば良いということになるので開発により専念することができます．</p>
+<h3 id="ユーザー作成をどこで行うべきか">ユーザー作成をどこで行うべきか</h3>
+<p>しかし，そうすると次の問題としてどこでユーザー作成を行うべきかという問題が発生します．</p>
+<p>CognitoはCognito自身が，サインアップ画面やログイン画面，パスワード変更画面などを自動でホスティングしてくれるため，非常に便利です</p>
+<p>しかし，この場合ユーザーの情報はCognito上にのみ存在することになってしまうので，ユーザーには後からDBに保存する追加の情報を入力してもらう必要があります．</p>
+<p>ここはtoC向けのアプリケーションかtoB向けのアプリケーションかで大きく方針がわかれそうです．</p>
+<p>toC向けのアプリケーションでは，ユーザー登録までの障壁をなるべく低くすることで，ユーザーの離脱を防ぐことができるかもしれません．</p>
+<p>この場合は，</p>
+<ol>
+<li>Cognitoでユーザー登録</li>
+<li>SPA上で機能を使用する前に追加のユーザー情報を入力してもらいDBに保存</li>
+</ol>
+<p>という流れになることが多いと思います．</p>
+<p>一方でtoB向けのアプリケーションでは，一般的に管理者がユーザーを作成する必要があります．この場合は</p>
+<ol>
+<li>SPA上でユーザー招待or作成のタイミングでユーザー情報の入力</li>
+<li>API側からCognitoに向けてユーザー作成のリクエストを投げる</li>
+</ol>
+<p>という流れになります．</p>
+<p>これらのフローでは作成するコンポーネントやエンドポイントが大きく変わるので注意が必要です．</p>
     </article>
 
     <ul class="astro-VJ4TPSPI tags-container">
-      <li class="astro-BLWJYJPT inline-block my-1 underline-offset-4">
-  <a href="/tags/javascript" class="astro-BLWJYJPT group pr-2 text-sm">
+      <li class="inline-block astro-BLWJYJPT my-1 underline-offset-4">
+  <a href="/tags/release" class="astro-BLWJYJPT group pr-2 text-sm">
     <svg class="astro-BLWJYJPT scale-75" xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
     </svg>
-    &nbsp;<span class="astro-BLWJYJPT">javascript</span>
-  </a>
-</li><li class="astro-BLWJYJPT inline-block my-1 underline-offset-4">
-  <a href="/tags/reactjs" class="astro-BLWJYJPT group pr-2 text-sm">
-    <svg class="astro-BLWJYJPT scale-75" xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
-    </svg>
-    &nbsp;<span class="astro-BLWJYJPT">reactjs</span>
-  </a>
-</li><li class="astro-BLWJYJPT inline-block my-1 underline-offset-4">
-  <a href="/tags/contextapi" class="astro-BLWJYJPT group pr-2 text-sm">
-    <svg class="astro-BLWJYJPT scale-75" xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
-    </svg>
-    &nbsp;<span class="astro-BLWJYJPT">contextapi</span>
-  </a>
-</li><li class="astro-BLWJYJPT inline-block my-1 underline-offset-4">
-  <a href="/tags/styled-components" class="astro-BLWJYJPT group pr-2 text-sm">
-    <svg class="astro-BLWJYJPT scale-75" xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
-    </svg>
-    &nbsp;<span class="astro-BLWJYJPT">styled-components</span>
-  </a>
-</li><li class="astro-BLWJYJPT inline-block my-1 underline-offset-4">
-  <a href="/tags/typescript" class="astro-BLWJYJPT group pr-2 text-sm">
-    <svg class="astro-BLWJYJPT scale-75" xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
-    </svg>
-    &nbsp;<span class="astro-BLWJYJPT">typescript</span>
+    &nbsp;<span class="astro-BLWJYJPT">release</span>
   </a>
 </li>
     </ul>
